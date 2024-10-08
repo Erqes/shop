@@ -10,12 +10,14 @@
         "dependencies": {
           "Application": "1.0.0",
           "Domain": "1.0.0",
+          "Mapster": "7.4.1-pre01",
           "MediatR": "12.4.1",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "8.0.8",
           "Microsoft.AspNetCore.Mvc.Core": "2.2.5",
           "Microsoft.IdentityModel.JsonWebTokens": "8.0.2",
           "Microsoft.IdentityModel.Tokens": "8.0.2",
-          "RestSharp": "112.0.0"
+          "RestSharp": "112.0.0",
+          "Unchase.Swashbuckle.AspNetCore.Extensions": "2.7.1"
         },
         "runtime": {
           "Infrastructure.dll": {}
@@ -37,6 +39,25 @@
           "lib/net8.0/FluentValidation.dll": {
             "assemblyVersion": "11.0.0.0",
             "fileVersion": "11.9.2.0"
+          }
+        }
+      },
+      "Mapster/7.4.1-pre01": {
+        "dependencies": {
+          "Mapster.Core": "1.2.2-pre01"
+        },
+        "runtime": {
+          "lib/net8.0/Mapster.dll": {
+            "assemblyVersion": "7.4.1.0",
+            "fileVersion": "7.4.1.0"
+          }
+        }
+      },
+      "Mapster.Core/1.2.2-pre01": {
+        "runtime": {
+          "lib/net8.0/Mapster.Core.dll": {
+            "assemblyVersion": "1.2.2.0",
+            "fileVersion": "1.2.2.0"
           }
         }
       },
@@ -916,11 +937,23 @@
           "System.Xml.ReaderWriter": "4.0.11"
         }
       },
+      "Unchase.Swashbuckle.AspNetCore.Extensions/2.7.1": {
+        "dependencies": {
+          "Swashbuckle.AspNetCore.SwaggerGen": "6.7.3"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Unchase.Swashbuckle.AspNetCore.Extensions.dll": {
+            "assemblyVersion": "2.7.1.0",
+            "fileVersion": "2.7.1.0"
+          }
+        }
+      },
       "Application/1.0.0": {
         "dependencies": {
           "Domain": "1.0.0",
           "MediatR": "12.4.1",
-          "Microsoft.IdentityModel.JsonWebTokens": "8.0.2"
+          "Microsoft.IdentityModel.JsonWebTokens": "8.0.2",
+          "Unchase.Swashbuckle.AspNetCore.Extensions": "2.7.1"
         },
         "runtime": {
           "Application.dll": {
@@ -938,7 +971,8 @@
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "8.0.8",
           "Microsoft.EntityFrameworkCore": "8.0.8",
           "Npgsql.EntityFrameworkCore.PostgreSQL": "8.0.4",
-          "Swashbuckle.AspNetCore": "6.7.3"
+          "Swashbuckle.AspNetCore": "6.7.3",
+          "Unchase.Swashbuckle.AspNetCore.Extensions": "2.7.1"
         },
         "runtime": {
           "Domain.dll": {
@@ -968,6 +1002,20 @@
       "sha512": "sha512-XeHp9LvFvu1fsQ/NvDCymV02GOCB1nz7ZUhfpI3uMhCcHTkV1K5bMkv+Nc/kuNYyAsX5+5bcmUanIEMd5QN+Eg==",
       "path": "fluentvalidation/11.9.2",
       "hashPath": "fluentvalidation.11.9.2.nupkg.sha512"
+    },
+    "Mapster/7.4.1-pre01": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-b7YEDoh4nuODGF7wUjgkxA3bTLLt7TxfPkKiFQTgCrNYHem1VVaJyXgsG9RVeQQ44+hoo69IfqENNKn0ox9ddg==",
+      "path": "mapster/7.4.1-pre01",
+      "hashPath": "mapster.7.4.1-pre01.nupkg.sha512"
+    },
+    "Mapster.Core/1.2.2-pre01": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-FuNCfTHytW9yeSuGHZ9f8u4cgbzhPL0GqoypA4LD99m0zkafs73IcaMxmbUtYjRThof+Z+jcEQ/suVYTkMpTkA==",
+      "path": "mapster.core/1.2.2-pre01",
+      "hashPath": "mapster.core.1.2.2-pre01.nupkg.sha512"
     },
     "MediatR/12.4.1": {
       "type": "package",
@@ -1682,6 +1730,13 @@
       "sha512": "sha512-Mk2mKmPi0nWaoiYeotq1dgeNK1fqWh61+EK+w4Wu8SWuTYLzpUnschb59bJtGywaPq7SmTuPf44wrXRwbIrukg==",
       "path": "system.xml.xdocument/4.0.11",
       "hashPath": "system.xml.xdocument.4.0.11.nupkg.sha512"
+    },
+    "Unchase.Swashbuckle.AspNetCore.Extensions/2.7.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-M2pp9GzQxJ9X6U93TPcC+HL4XuZrRg2BIrB9Pt6WJ1LfrdZ9KMwJNBWrGWuJ/XmrS8WVx4IUT07xkVC1kKvxgA==",
+      "path": "unchase.swashbuckle.aspnetcore.extensions/2.7.1",
+      "hashPath": "unchase.swashbuckle.aspnetcore.extensions.2.7.1.nupkg.sha512"
     },
     "Application/1.0.0": {
       "type": "project",

@@ -1,4 +1,6 @@
 ﻿using System.Reflection;
+using Application.DTOs.Products;
+using Application.Validation;
 using Microsoft.Extensions.DependencyInjection;
 using FluentValidation;
 
@@ -10,6 +12,7 @@ public static class DependencyInjection
     {
         
         services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly()));
+        services.AddScoped<IValidator<UpdateProductCommandDTO>, UpdateProductCommandDTOValidation>();
         return services;
     }
 }

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "mKtk/s2vJbE=",
+  "dgSpecHash": "ilQ+AVPEDrs=",
   "success": true,
   "projectFilePath": "D:\\C#\\shop\\Application\\Application.csproj",
   "expectedPackageFiles": [
@@ -38,7 +38,8 @@
     "C:\\Users\\Paweł\\.nuget\\packages\\swashbuckle.aspnetcore\\6.7.3\\swashbuckle.aspnetcore.6.7.3.nupkg.sha512",
     "C:\\Users\\Paweł\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.7.3\\swashbuckle.aspnetcore.swagger.6.7.3.nupkg.sha512",
     "C:\\Users\\Paweł\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.7.3\\swashbuckle.aspnetcore.swaggergen.6.7.3.nupkg.sha512",
-    "C:\\Users\\Paweł\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.7.3\\swashbuckle.aspnetcore.swaggerui.6.7.3.nupkg.sha512"
+    "C:\\Users\\Paweł\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.7.3\\swashbuckle.aspnetcore.swaggerui.6.7.3.nupkg.sha512",
+    "C:\\Users\\Paweł\\.nuget\\packages\\unchase.swashbuckle.aspnetcore.extensions\\2.7.1\\unchase.swashbuckle.aspnetcore.extensions.2.7.1.nupkg.sha512"
   ],
   "logs": [
     {

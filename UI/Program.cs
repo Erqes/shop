@@ -8,16 +8,19 @@ using MediatR;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Tokens;
+using Unchase.Swashbuckle.AspNetCore.Extensions.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
-var config = new ConfigurationBuilder()
-    .AddUserSecrets<Program>()
-    .Build();
 // Add services to the container.
 
 builder.Services.AddControllers();
 builder.Services.AddInfrastructure(builder.Configuration)
     .AddApplication();
+builder.Services.ConfigureSwaggerGen(options =>
+{
+    options.AddEnumsWithValuesFixFilters();
+});
+builder.Configuration.AddUserSecrets<Program>();
 builder.Services.AddAuthorization();
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(o =>

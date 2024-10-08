@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "5RULL74H7bc=",
+  "dgSpecHash": "QwScsxLTpSU=",
   "success": true,
   "projectFilePath": "D:\\C#\\shop\\Domain\\Domain.csproj",
   "expectedPackageFiles": [
@@ -59,7 +59,8 @@
     "C:\\Users\\Paweł\\.nuget\\packages\\system.text.encoding.codepages\\6.0.0\\system.text.encoding.codepages.6.0.0.nupkg.sha512",
     "C:\\Users\\Paweł\\.nuget\\packages\\system.text.encodings.web\\8.0.0\\system.text.encodings.web.8.0.0.nupkg.sha512",
     "C:\\Users\\Paweł\\.nuget\\packages\\system.text.json\\8.0.4\\system.text.json.8.0.4.nupkg.sha512",
-    "C:\\Users\\Paweł\\.nuget\\packages\\system.threading.channels\\6.0.0\\system.threading.channels.6.0.0.nupkg.sha512"
+    "C:\\Users\\Paweł\\.nuget\\packages\\system.threading.channels\\6.0.0\\system.threading.channels.6.0.0.nupkg.sha512",
+    "C:\\Users\\Paweł\\.nuget\\packages\\unchase.swashbuckle.aspnetcore.extensions\\2.7.1\\unchase.swashbuckle.aspnetcore.extensions.2.7.1.nupkg.sha512"
   ],
   "logs": [
     {

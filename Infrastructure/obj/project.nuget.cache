@@ -1,11 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "F95fm65WItE=",
+  "dgSpecHash": "vyLMFlVOYug=",
   "success": true,
   "projectFilePath": "D:\\C#\\shop\\Infrastructure\\Infrastructure.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Paweł\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
     "C:\\Users\\Paweł\\.nuget\\packages\\fluentvalidation\\11.9.2\\fluentvalidation.11.9.2.nupkg.sha512",
+    "C:\\Users\\Paweł\\.nuget\\packages\\mapster\\7.4.1-pre01\\mapster.7.4.1-pre01.nupkg.sha512",
+    "C:\\Users\\Paweł\\.nuget\\packages\\mapster.core\\1.2.2-pre01\\mapster.core.1.2.2-pre01.nupkg.sha512",
     "C:\\Users\\Paweł\\.nuget\\packages\\mediatr\\12.4.1\\mediatr.12.4.1.nupkg.sha512",
     "C:\\Users\\Paweł\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512",
     "C:\\Users\\Paweł\\.nuget\\packages\\mediatr.extensions.microsoft.dependencyinjection\\11.1.0\\mediatr.extensions.microsoft.dependencyinjection.11.1.0.nupkg.sha512",
@@ -107,7 +109,8 @@
     "C:\\Users\\Paweł\\.nuget\\packages\\system.threading.tasks\\4.0.11\\system.threading.tasks.4.0.11.nupkg.sha512",
     "C:\\Users\\Paweł\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.1\\system.threading.tasks.extensions.4.5.1.nupkg.sha512",
     "C:\\Users\\Paweł\\.nuget\\packages\\system.xml.readerwriter\\4.0.11\\system.xml.readerwriter.4.0.11.nupkg.sha512",
-    "C:\\Users\\Paweł\\.nuget\\packages\\system.xml.xdocument\\4.0.11\\system.xml.xdocument.4.0.11.nupkg.sha512"
+    "C:\\Users\\Paweł\\.nuget\\packages\\system.xml.xdocument\\4.0.11\\system.xml.xdocument.4.0.11.nupkg.sha512",
+    "C:\\Users\\Paweł\\.nuget\\packages\\unchase.swashbuckle.aspnetcore.extensions\\2.7.1\\unchase.swashbuckle.aspnetcore.extensions.2.7.1.nupkg.sha512"
   ],
   "logs": [
     {

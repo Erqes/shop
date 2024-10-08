@@ -570,6 +570,22 @@
           "Microsoft.AspNetCore.App"
         ]
       },
+      "Unchase.Swashbuckle.AspNetCore.Extensions/2.7.1": {
+        "type": "package",
+        "dependencies": {
+          "Swashbuckle.AspNetCore.SwaggerGen": "6.4.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Unchase.Swashbuckle.AspNetCore.Extensions.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Unchase.Swashbuckle.AspNetCore.Extensions.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Domain/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
@@ -581,7 +597,8 @@
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "8.0.8",
           "Microsoft.EntityFrameworkCore": "8.0.8",
           "Npgsql.EntityFrameworkCore.PostgreSQL": "8.0.4",
-          "Swashbuckle.AspNetCore": "6.7.3"
+          "Swashbuckle.AspNetCore": "6.7.3",
+          "Unchase.Swashbuckle.AspNetCore.Extensions": "2.7.1"
         },
         "compile": {
           "bin/placeholder/Domain.dll": {}
@@ -1639,6 +1656,19 @@
         "swashbuckle.aspnetcore.swaggerui.nuspec"
       ]
     },
+    "Unchase.Swashbuckle.AspNetCore.Extensions/2.7.1": {
+      "sha512": "M2pp9GzQxJ9X6U93TPcC+HL4XuZrRg2BIrB9Pt6WJ1LfrdZ9KMwJNBWrGWuJ/XmrS8WVx4IUT07xkVC1kKvxgA==",
+      "type": "package",
+      "path": "unchase.swashbuckle.aspnetcore.extensions/2.7.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/Unchase.Swashbuckle.AspNetCore.Extensions.dll",
+        "lib/netstandard2.0/Unchase.Swashbuckle.AspNetCore.Extensions.xml",
+        "unchase.swashbuckle.aspnetcore.extensions.2.7.1.nupkg.sha512",
+        "unchase.swashbuckle.aspnetcore.extensions.nuspec"
+      ]
+    },
     "Domain/1.0.0": {
       "type": "project",
       "path": "../Domain/Domain.csproj",
@@ -1649,7 +1679,8 @@
     "net8.0": [
       "Domain >= 1.0.0",
       "MediatR >= 12.4.1",
-      "Microsoft.IdentityModel.JsonWebTokens >= 8.0.2"
+      "Microsoft.IdentityModel.JsonWebTokens >= 8.0.2",
+      "Unchase.Swashbuckle.AspNetCore.Extensions >= 2.7.1"
     ]
   },
   "packageFolders": {
@@ -1705,6 +1736,10 @@
           "Microsoft.IdentityModel.JsonWebTokens": {
             "target": "Package",
             "version": "[8.0.2, )"
+          },
+          "Unchase.Swashbuckle.AspNetCore.Extensions": {
+            "target": "Package",
+            "version": "[2.7.1, )"
           }
         },
         "imports": [

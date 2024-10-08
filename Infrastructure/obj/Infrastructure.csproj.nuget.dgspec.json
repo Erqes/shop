@@ -54,6 +54,10 @@
             "Microsoft.IdentityModel.JsonWebTokens": {
               "target": "Package",
               "version": "[8.0.2, )"
+            },
+            "Unchase.Swashbuckle.AspNetCore.Extensions": {
+              "target": "Package",
+              "version": "[2.7.1, )"
             }
           },
           "imports": [
@@ -152,6 +156,10 @@
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.7.3, )"
+            },
+            "Unchase.Swashbuckle.AspNetCore.Extensions": {
+              "target": "Package",
+              "version": "[2.7.1, )"
             }
           },
           "imports": [
@@ -220,6 +228,10 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Mapster": {
+              "target": "Package",
+              "version": "[7.4.1-pre01, )"
+            },
             "MediatR": {
               "target": "Package",
               "version": "[12.4.1, )"
@@ -243,6 +255,10 @@
             "RestSharp": {
               "target": "Package",
               "version": "[112.0.0, )"
+            },
+            "Unchase.Swashbuckle.AspNetCore.Extensions": {
+              "target": "Package",
+              "version": "[2.7.1, )"
             }
           },
           "imports": [

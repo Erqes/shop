@@ -1,5 +1,5 @@
 ﻿using System.Text;
-using Application.Command.Query;
+using Application.Accounts.Query;
 using Domain.Entities;
 using Infrastructure.Service;
 using MediatR;

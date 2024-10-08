@@ -1,5 +1,5 @@
-﻿using Application.Command.Customer;
-using Application.Command.Query;
+﻿using Application.Accounts.Query;
+using Application.Command.Customer;
 using Application.DTOs.Customer;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;

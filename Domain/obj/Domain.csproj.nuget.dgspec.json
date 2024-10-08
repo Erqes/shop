@@ -80,6 +80,10 @@
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.7.3, )"
+            },
+            "Unchase.Swashbuckle.AspNetCore.Extensions": {
+              "target": "Package",
+              "version": "[2.7.1, )"
             }
           },
           "imports": [

@@ -44,6 +44,27 @@
           }
         }
       },
+      "Mapster/7.4.1-pre01": {
+        "type": "package",
+        "dependencies": {
+          "Mapster.Core": "1.2.2-pre01"
+        },
+        "compile": {
+          "lib/net8.0/Mapster.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/Mapster.dll": {}
+        }
+      },
+      "Mapster.Core/1.2.2-pre01": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/Mapster.Core.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/Mapster.Core.dll": {}
+        }
+      },
       "MediatR/12.4.1": {
         "type": "package",
         "dependencies": {
@@ -1638,13 +1659,30 @@
           "lib/netcoreapp2.1/_._": {}
         }
       },
+      "Unchase.Swashbuckle.AspNetCore.Extensions/2.7.1": {
+        "type": "package",
+        "dependencies": {
+          "Swashbuckle.AspNetCore.SwaggerGen": "6.4.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Unchase.Swashbuckle.AspNetCore.Extensions.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Unchase.Swashbuckle.AspNetCore.Extensions.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Application/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
           "Domain": "1.0.0",
           "MediatR": "12.4.1",
-          "Microsoft.IdentityModel.JsonWebTokens": "8.0.2"
+          "Microsoft.IdentityModel.JsonWebTokens": "8.0.2",
+          "Unchase.Swashbuckle.AspNetCore.Extensions": "2.7.1"
         },
         "compile": {
           "bin/placeholder/Application.dll": {}
@@ -1664,7 +1702,8 @@
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "8.0.8",
           "Microsoft.EntityFrameworkCore": "8.0.8",
           "Npgsql.EntityFrameworkCore.PostgreSQL": "8.0.4",
-          "Swashbuckle.AspNetCore": "6.7.3"
+          "Swashbuckle.AspNetCore": "6.7.3",
+          "Unchase.Swashbuckle.AspNetCore.Extensions": "2.7.1"
         },
         "compile": {
           "bin/placeholder/Domain.dll": {}
@@ -1679,12 +1718,14 @@
         "dependencies": {
           "Application": "1.0.0",
           "Domain": "1.0.0",
+          "Mapster": "7.4.1-pre01",
           "MediatR": "12.4.1",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "8.0.8",
           "Microsoft.AspNetCore.Mvc.Core": "2.2.5",
           "Microsoft.IdentityModel.JsonWebTokens": "8.0.2",
           "Microsoft.IdentityModel.Tokens": "8.0.2",
-          "RestSharp": "112.0.0"
+          "RestSharp": "112.0.0",
+          "Unchase.Swashbuckle.AspNetCore.Extensions": "2.7.1"
         },
         "compile": {
           "bin/placeholder/Infrastructure.dll": {}
@@ -1752,6 +1793,36 @@
         "lib/netstandard2.0/Humanizer.dll",
         "lib/netstandard2.0/Humanizer.xml",
         "logo.png"
+      ]
+    },
+    "Mapster/7.4.1-pre01": {
+      "sha512": "b7YEDoh4nuODGF7wUjgkxA3bTLLt7TxfPkKiFQTgCrNYHem1VVaJyXgsG9RVeQQ44+hoo69IfqENNKn0ox9ddg==",
+      "type": "package",
+      "path": "mapster/7.4.1-pre01",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "icon.png",
+        "lib/net6.0/Mapster.dll",
+        "lib/net7.0/Mapster.dll",
+        "lib/net8.0/Mapster.dll",
+        "mapster.7.4.1-pre01.nupkg.sha512",
+        "mapster.nuspec"
+      ]
+    },
+    "Mapster.Core/1.2.2-pre01": {
+      "sha512": "FuNCfTHytW9yeSuGHZ9f8u4cgbzhPL0GqoypA4LD99m0zkafs73IcaMxmbUtYjRThof+Z+jcEQ/suVYTkMpTkA==",
+      "type": "package",
+      "path": "mapster.core/1.2.2-pre01",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "icon.png",
+        "lib/net6.0/Mapster.Core.dll",
+        "lib/net7.0/Mapster.Core.dll",
+        "lib/net8.0/Mapster.Core.dll",
+        "mapster.core.1.2.2-pre01.nupkg.sha512",
+        "mapster.core.nuspec"
       ]
     },
     "MediatR/12.4.1": {
@@ -4158,6 +4229,19 @@
         "version.txt"
       ]
     },
+    "Unchase.Swashbuckle.AspNetCore.Extensions/2.7.1": {
+      "sha512": "M2pp9GzQxJ9X6U93TPcC+HL4XuZrRg2BIrB9Pt6WJ1LfrdZ9KMwJNBWrGWuJ/XmrS8WVx4IUT07xkVC1kKvxgA==",
+      "type": "package",
+      "path": "unchase.swashbuckle.aspnetcore.extensions/2.7.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/Unchase.Swashbuckle.AspNetCore.Extensions.dll",
+        "lib/netstandard2.0/Unchase.Swashbuckle.AspNetCore.Extensions.xml",
+        "unchase.swashbuckle.aspnetcore.extensions.2.7.1.nupkg.sha512",
+        "unchase.swashbuckle.aspnetcore.extensions.nuspec"
+      ]
+    },
     "Application/1.0.0": {
       "type": "project",
       "path": "../Application/Application.csproj",
@@ -4181,7 +4265,8 @@
       "Infrastructure >= 1.0.0",
       "MediatR >= 12.4.1",
       "Microsoft.EntityFrameworkCore.Design >= 8.0.8",
-      "Swashbuckle.AspNetCore >= 6.7.3"
+      "Swashbuckle.AspNetCore >= 6.7.3",
+      "Unchase.Swashbuckle.AspNetCore.Extensions >= 2.7.1"
     ]
   },
   "packageFolders": {
@@ -4249,6 +4334,10 @@
           "Swashbuckle.AspNetCore": {
             "target": "Package",
             "version": "[6.7.3, )"
+          },
+          "Unchase.Swashbuckle.AspNetCore.Extensions": {
+            "target": "Package",
+            "version": "[2.7.1, )"
           }
         },
         "imports": [
