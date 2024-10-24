@@ -5,16 +5,20 @@ using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
 namespace UI.Controllers;
+
 [Route("Account")]
-public class AccountController(IMediator mediator) : ControllerBase
+public class AccountController(IMediator mediator, IConfiguration configuration) : ControllerBase
 {
     [Route("ConfirmEmail")]
     [HttpGet]
     public async Task<IActionResult> ConfirmEmail(string userId, string code)
     {
-        var result=await mediator.Send(new ConfirmEmailQuery(userId, code));
-        return Ok(result);
+        var result = await mediator.Send(new ConfirmEmailQuery(userId, code));
+        var url = configuration.GetSection("FrontHost").Value;
+        return Redirect(url
+        );
     }
+
     [Route("SignUp")]
     [HttpPost]
     public async Task<IActionResult> SignUp([FromBody] SignUpDTO dto)
@@ -33,9 +37,9 @@ public class AccountController(IMediator mediator) : ControllerBase
 
     [Route("ResetPassword")]
     [HttpPost]
-    public async Task<IActionResult> ResetPassword(string userId, string token,[FromBody] string password,[FromBody] string confirmPassword)
+    public async Task<IActionResult> ResetPassword([FromBody] ResetPasswordDTO dto)
     {
-        var result=await mediator.Send(new ResetPasswordCommand(userId,token,password,confirmPassword));
+        var result = await mediator.Send(new ResetPasswordCommand(dto));
         return Ok(result);
     }
 
@@ -46,5 +50,4 @@ public class AccountController(IMediator mediator) : ControllerBase
         await mediator.Send(new ForgotPasswordCommand(email));
         return Ok();
     }
-    
 }

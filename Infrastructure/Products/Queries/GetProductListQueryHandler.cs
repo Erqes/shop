@@ -51,6 +51,4 @@ public class GetProductListQueryHandler:IRequestHandler<GetProductListQuery,ICol
         return response;
 
     }
-
-
 }

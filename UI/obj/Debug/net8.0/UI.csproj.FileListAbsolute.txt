@@ -132,3 +132,9 @@ D:\C#\shop\UI\obj\Debug\net8.0\refint\UI.dll
 D:\C#\shop\UI\obj\Debug\net8.0\UI.pdb
 D:\C#\shop\UI\obj\Debug\net8.0\UI.genruntimeconfig.cache
 D:\C#\shop\UI\obj\Debug\net8.0\ref\UI.dll
+D:\C#\shop\UI\bin\Debug\net8.0\Newtonsoft.Json.dll
+D:\C#\shop\UI\bin\Debug\net8.0\Stripe.net.dll
+D:\C#\shop\UI\bin\Debug\net8.0\System.Configuration.ConfigurationManager.dll
+D:\C#\shop\UI\bin\Debug\net8.0\System.Security.Cryptography.ProtectedData.dll
+D:\C#\shop\UI\bin\Debug\net8.0\Payment.dll
+D:\C#\shop\UI\bin\Debug\net8.0\Payment.pdb

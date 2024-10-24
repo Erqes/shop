@@ -3,10 +3,10 @@ using MediatR;
 
 namespace Application.Command.Customer;
 
-public class ResetPasswordCommand(string userId,string token,string password, string confirmPassword):IRequest<string>
+public class ResetPasswordCommand(ResetPasswordDTO dto):IRequest<string>
 {
-    public string UserId { get; set; } = userId;
-    public string Token { get; set; } = token;
-    public string NewPassword { get; set; } = password;
-    public string ConfirmPassword { get; set; } = confirmPassword;
+    public string UserId { get; set; } = dto.UserId;
+    public string Token { get; set; } = dto.Token;
+    public string NewPassword { get; set; } = dto.NewPassword;
+    public string ConfirmPassword { get; set; } = dto.ConfirmPassword;
 }

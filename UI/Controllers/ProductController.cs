@@ -8,7 +8,6 @@ namespace UI.Controllers;
 [Route("Product")]
 public class ProductController(IMediator mediator): ControllerBase
 {
-    [Route("Products")]
     [HttpGet]
     public async Task<IActionResult> GetProductsList([FromQuery] GetProductListQuery query)
     {

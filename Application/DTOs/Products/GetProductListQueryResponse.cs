@@ -13,6 +13,6 @@ public class GetProductListQueryResponse
     public string? Gpu { get; set; }
     public string? MainBoard { get; set; }
     public string? DiagonalScreenSize { get; set; }
-    public float Price { get; set; }
+    public double Price { get; set; }
     public ProductType ProductType { get; set; }    
 }

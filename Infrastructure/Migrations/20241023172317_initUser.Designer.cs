@@ -12,8 +12,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Infrastructure.Migrations
 {
     [DbContext(typeof(ShopDbContext))]
-    [Migration("20240930201114_init")]
-    partial class init
+    [Migration("20241023172317_initUser")]
+    partial class initUser
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -83,18 +83,17 @@ namespace Infrastructure.Migrations
                     b.Property<DateTime>("OrderDate")
                         .HasColumnType("timestamp with time zone");
 
-                    b.Property<string>("OrderDetails")
+                    b.Property<string>("SessionId")
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<long>("ShipmentId")
-                        .HasColumnType("bigint");
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasColumnType("text");
 
                     b.HasKey("Id");
 
                     b.HasIndex("CustomerId");
-
-                    b.HasIndex("ShipmentId");
 
                     b.ToTable("Orders");
                 });
@@ -113,13 +112,16 @@ namespace Infrastructure.Migrations
                     b.Property<long>("ProductId")
                         .HasColumnType("bigint");
 
+                    b.Property<long>("Quantity")
+                        .HasColumnType("bigint");
+
                     b.HasKey("Id");
 
                     b.HasIndex("OrderId");
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("OrderProduct");
+                    b.ToTable("OrderProducts");
                 });
 
             modelBuilder.Entity("Domain.Entities.Product", b =>
@@ -158,10 +160,13 @@ namespace Infrastructure.Migrations
                     b.Property<string>("PowerSupply")
                         .HasColumnType("text");
 
-                    b.Property<float>("Price")
-                        .HasColumnType("real");
+                    b.Property<double>("Price")
+                        .HasColumnType("double precision");
 
                     b.Property<string>("Processor")
+                        .HasColumnType("text");
+
+                    b.Property<string>("ProductImage")
                         .HasColumnType("text");
 
                     b.Property<string>("ProductName")
@@ -188,21 +193,32 @@ namespace Infrastructure.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<long>("Id"));
 
-                    b.Property<DateTime>("ShipmentDate")
-                        .HasColumnType("timestamp with time zone");
-
-                    b.Property<string>("ShipmentDetails")
+                    b.Property<string>("Address1")
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<string>("ShipmentStatus")
+                    b.Property<string>("Address2")
+                        .HasColumnType("text");
+
+                    b.Property<string>("City")
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<int>("ShipmentTrackingNumber")
-                        .HasColumnType("integer");
+                    b.Property<string>("Country")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<long>("OrderId")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("PostalCode")
+                        .IsRequired()
+                        .HasColumnType("text");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("OrderId")
+                        .IsUnique();
 
                     b.ToTable("Shipments");
                 });
@@ -299,14 +315,14 @@ namespace Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "cb01b365-8812-42d5-b0a2-fa48af44c8f2",
+                            Id = "2c082972-f54b-4875-a88f-aec2069a3440",
                             ConcurrencyStamp = "1",
                             Name = "User",
                             NormalizedName = "USER"
                         },
                         new
                         {
-                            Id = "50b3680d-418a-4a3e-b534-cae5609df47e",
+                            Id = "61c5be8d-72a7-4147-8562-7ec6bbf26bb6",
                             ConcurrencyStamp = "2",
                             Name = "Customer",
                             NormalizedName = "CUSTOMER"
@@ -438,15 +454,7 @@ namespace Infrastructure.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Domain.Entities.Shipment", "Shipment")
-                        .WithMany("Orders")
-                        .HasForeignKey("ShipmentId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.Navigation("Customer");
-
-                    b.Navigation("Shipment");
                 });
 
             modelBuilder.Entity("Domain.Entities.OrderProduct", b =>
@@ -466,6 +474,17 @@ namespace Infrastructure.Migrations
                     b.Navigation("Order");
 
                     b.Navigation("Product");
+                });
+
+            modelBuilder.Entity("Domain.Entities.Shipment", b =>
+                {
+                    b.HasOne("Domain.Entities.Order", "Order")
+                        .WithOne("Shipment")
+                        .HasForeignKey("Domain.Entities.Shipment", "OrderId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Order");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -527,16 +546,13 @@ namespace Infrastructure.Migrations
             modelBuilder.Entity("Domain.Entities.Order", b =>
                 {
                     b.Navigation("OrderProducts");
+
+                    b.Navigation("Shipment");
                 });
 
             modelBuilder.Entity("Domain.Entities.Product", b =>
                 {
                     b.Navigation("OrderProducts");
-                });
-
-            modelBuilder.Entity("Domain.Entities.Shipment", b =>
-                {
-                    b.Navigation("Orders");
                 });
 
             modelBuilder.Entity("Domain.Entities.User", b =>

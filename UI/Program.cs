@@ -8,6 +8,8 @@ using MediatR;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Tokens;
+using Payment;
+using Stripe;
 using Unchase.Swashbuckle.AspNetCore.Extensions.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -15,12 +17,13 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 builder.Services.AddInfrastructure(builder.Configuration)
-    .AddApplication();
+    .AddApplication().AddPayments();
 builder.Services.ConfigureSwaggerGen(options =>
 {
     options.AddEnumsWithValuesFixFilters();
 });
 builder.Configuration.AddUserSecrets<Program>();
+StripeConfiguration.ApiKey = builder.Configuration["stripeKey"];
 builder.Services.AddAuthorization();
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(o =>
@@ -37,6 +40,17 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(
+        policy =>
+        {
+            policy.WithOrigins(builder.Configuration.GetSection("FrontHost").Value)
+                .AllowAnyHeader()
+                .AllowAnyMethod()
+                .AllowAnyOrigin();
+        });
+});
 builder.Services.AddSwaggerGen();
 var app = builder.Build();
 
@@ -51,9 +65,9 @@ if (app.Environment.IsDevelopment())
 app.MapIdentityApi<User>();
 app.UseHttpsRedirection();
 app.UseRouting();
+app.UseCors();
 app.UseAuthentication();
 app.UseAuthorization();
-
 app.MapControllers();
 using (var scope = app.Services.CreateScope())
 {

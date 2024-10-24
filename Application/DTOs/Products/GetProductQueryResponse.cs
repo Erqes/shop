@@ -17,6 +17,6 @@ public class GetProductQueryResponse
     public string? MainBoard { get; set; }
     public string? Camera { get; set; }
     public string? DiagonalScreenSize { get; set; }
-    public float Price { get; set; }
+    public double Price { get; set; }
     public ProductType ProductType { get; set; }  
 }
